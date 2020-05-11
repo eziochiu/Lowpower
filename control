@@ -1,0 +1,9 @@
+Package: com.ezio.lowpower
+Name: lowpower
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: 充电状态下始终取消省点模式，非充电状态下始终开启省电模式，无设置项
+Maintainer: eziochiu
+Author: eziochiu
+Section: Tweaks
