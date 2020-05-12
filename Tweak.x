@@ -1,4 +1,4 @@
-// #import <CoreDuet/_CDBatterySaver.h>
+
 @interface _CDBatterySaver : NSObject
 + (id)batterySaver;
 - (long long)getPowerMode;
@@ -29,7 +29,11 @@ static void sb_event_acstatuschanged(CFNotificationCenterRef center, void *obser
 %hook SpringBoard
 - (void)applicationDidFinishLaunching:(id)application {
 	%orig;
-	sb_event_acstatuschanged(NULL, NULL, NULL, NULL, NULL);
+	batterySaver = [_CDBatterySaver batterySaver];
+	last_lpm_state = [batterySaver getPowerMode];
+	if (last_lpm_state == 0) {
+		[batterySaver setMode:1];
+	}
 }
 %end
 

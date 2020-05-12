@@ -1,4 +1,4 @@
-export THEOS_DEVICE_IP = 192.168.1.4
+export THEOS_DEVICE_IP = 192.168.2.24
 INSTALL_TARGET_PROCESSES = SpringBoard
 
 include $(THEOS)/makefiles/common.mk
